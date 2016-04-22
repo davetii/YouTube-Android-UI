@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="320dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/custom_background"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:maxHeight="180px" android:maxWidth="320px"
+        android:minHeight="180px" android:minWidth="320px"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/VideoCardTitle"
+        style="@style/VideoCardChannel"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/VideoCardDescription"
+        style="@style/VideoCardDescription"
+        android:maxLines="4"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/VideoCardDate"
+        android:text="Date"
+        />
+</LinearLayout>
