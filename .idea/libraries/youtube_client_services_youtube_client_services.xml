@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="youtube-client-services.youtube-client-services">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/youtube-client-services/build/libs/youtube-client-services.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,1 +1,1 @@
-include ':app', ':youtube-client-services'
+include ':app'

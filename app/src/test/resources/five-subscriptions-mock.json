@@ -1,0 +1,134 @@
+{
+ "kind": "youtube#subscriptionListResponse",
+ "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/b-FmNijjMZiTytMVm2kf0dzSPhA\"",
+ "nextPageToken": "CAUQAA",
+ "pageInfo": {
+  "totalResults": 127,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+
+
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/x4nszKYTuOHU6R26gpCuMfknqhU\"",
+   "id": "0TT2uNx6myfCkbItHpOYzWiUIeEbHou-C4JmX684_SA",
+   "snippet": {
+    "publishedAt": "2015-11-29T02:14:48.000Z",
+    "title": "minagroupstage",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCLNU4Mw1ussuxMF_HvEfr1w"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-e4829iFR9Ko/AAAAAAAAAAI/AAAAAAAAAAA/619ol2EU-Rc/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-e4829iFR9Ko/AAAAAAAAAAI/AAAAAAAAAAA/619ol2EU-Rc/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  },
+  {
+
+
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/SiWAtgR67tYBTxZlOSM8ca5R2YE\"",
+   "id": "0TT2uNx6myfCkbItHpOYzeI_xJMqdpvC4QRNLFK4GOM",
+   "snippet": {
+    "publishedAt": "2015-11-27T20:42:22.000Z",
+    "title": "Real Time with Bill Maher",
+    "description": "He's irrepressible, opinionated, and of course, politically incorrect. Watch new episodes of Real Time with Bill Maher, Fridays at 10PM\n\nSubscribe to the Real Time Channel for the latest on Bill Maher.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCy6kyFxaMqGtpE3pQTflK8A"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-tbRHRuxcqwE/AAAAAAAAAAI/AAAAAAAAAAA/vrXiH3dsY1E/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-tbRHRuxcqwE/AAAAAAAAAAI/AAAAAAAAAAA/vrXiH3dsY1E/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  },
+  {
+
+
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/i7pVLpUyRFdE_ad6ehcf5e8UaHE\"",
+   "id": "0TT2uNx6myfCkbItHpOYzUg9_zAABi2kPIgOfYNFu7E",
+   "snippet": {
+    "publishedAt": "2015-11-16T02:12:27.000Z",
+    "title": "LastWeekTonight",
+    "description": "Breaking news on a weekly basis. Sundays at 11PM - only on HBO.\nSubscribe to the Last Week Tonight channel for the latest videos from John Oliver and the LWT team.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC3XTzVzaHQEd30rQbuvCtTQ"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-lc3LinEhpgA/AAAAAAAAAAI/AAAAAAAAAAA/A6-FbtNyNgU/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-lc3LinEhpgA/AAAAAAAAAAI/AAAAAAAAAAA/A6-FbtNyNgU/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  },
+  {
+
+
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/pI3g37EZxMyEuVX_P_LUbMm8b6c\"",
+   "id": "0TT2uNx6myfCkbItHpOYzcq8KrYJGb1owfXGx7q85M4",
+   "snippet": {
+    "publishedAt": "2015-10-25T04:23:05.000Z",
+    "title": "Tom's Test Kitchen",
+    "description": "Just trying to share with the rest of the community. Ask to join my Google+ circle, I'm Tom Jones aka tj104849@gmail.com",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCP07Px0PRJBi1bdpCvUxgjg"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-mPA5y-850Hc/AAAAAAAAAAI/AAAAAAAAAAA/GQbN9Ewox3U/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-mPA5y-850Hc/AAAAAAAAAAI/AAAAAAAAAAA/GQbN9Ewox3U/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/5C4DB92PuT9N-4FIdeAC4qRKEss\"",
+   "id": "0TT2uNx6myfCkbItHpOYzefVfQL8S7OAXpFVrF4mnW0",
+   "snippet": {
+    "publishedAt": "2015-09-25T17:44:37.000Z",
+    "title": "Google Design",
+    "description": "The Google Design channel features videos for designers about material design, design principles at Google, and Google Design events.\n\nLearn more about Google's design guidelines, assets, resources, events and job opportunities at: design.google.com. \n\nFollow Google Design on:\nGoogle+: https://plus.google.com/+GoogleDesign\nTwitter: https://twitter.com/googledesign\nFacebook: https://facebook.com/googledesign\nMedium: https://medium.com/google-design\nDribbble: https://dribbble.com/google",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UClKO7be7O9cUGL94PHnAeOA"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-99RMkL32yk8/AAAAAAAAAAI/AAAAAAAAAAA/VRQkMbulnco/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-99RMkL32yk8/AAAAAAAAAAI/AAAAAAAAAAA/VRQkMbulnco/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  }
+ ]
+}

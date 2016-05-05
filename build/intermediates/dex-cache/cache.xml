@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-alpha2\jars\libs\internal_impl-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e460bc069dfd21d22770cf2a2370c9021b9c98a2">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0-alpha2_dad5882360404de7b3f40e0b96c1ecd024710221.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="bf5aa3b026d5b5fd9f4ab5e8cf13499b9e016dfb">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.0.0-alpha2_2649734ff192c755d5f40471494adb81af6464be.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-java6\1.21.0\71d8fa80be75b70af2626c3fe3fe9f7032f34729\google-oauth-client-java6-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="71d8fa80be75b70af2626c3fe3fe9f7032f34729">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-oauth-client-java6-1.21.0_23b9a546908186f49cfbfd508e4940ea1adf4f73.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.21.0\61ec42bbfc51aafde5eb8b4923c602c5b5965bc2\google-oauth-client-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="61ec42bbfc51aafde5eb8b4923c602c5b5965bc2">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-oauth-client-1.21.0_aa2d0a6935670451c0d52b9b28fce6eeb253ca44.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty-util\6.1.26\e5642fe0399814e1687d55a3862aa5a3417226a9\jetty-util-6.1.26.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e5642fe0399814e1687d55a3862aa5a3417226a9">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\jetty-util-6.1.26_7907916d701faf3383d810af00cff5a8c00b7afe.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.21.0\8ce17bdd15fff0fd8cf359757f29e778fc7191ad\google-http-client-jackson2-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8ce17bdd15fff0fd8cf359757f29e778fc7191ad">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.21.0_48184ee725d4235cde18a0d169851ee8f2a3ef40.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-jetty\1.21.0\c73ebd9af54413e0991a1f9a742193952611d5f6\google-oauth-client-jetty-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c73ebd9af54413e0991a1f9a742193952611d5f6">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-oauth-client-jetty-1.21.0_95efc06a1b73806234095fa29eb101e1651775c5.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="dc88341cbaaac9d67a982378e5df68d8c81289ed">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.0.0-alpha2_fb58f6eccd0c872b84f4287b97a945c23ebb44ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\servlet-api\2.5-20081211\22bff70037e1e6fa7e6413149489552ee2064702\servlet-api-2.5-20081211.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="22bff70037e1e6fa7e6413149489552ee2064702">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\servlet-api-2.5-20081211_0faad13fad88998093eeb9ffb978a6d7dad1c22b.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.guava\guava-jdk5\17.0\463f8378feba44df7ba7cd9272d01837dad62b36\guava-jdk5-17.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\guava-jdk5-17.0_e399924d126d0f62905ab93e47574adc3281156a.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.21.0\42631630fe1276d4d6d6397bb07d53a4e4fec278\google-http-client-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="42631630fe1276d4d6d6397bb07d53a4e4fec278">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-http-client-1.21.0_b72c0d3fd20c327a09e5f3d19fe94f550d2a5b1c.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-core\2.5\7ed845de1dfe070d43511fab321784e6c4118398\log4j-core-2.5.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="7ed845de1dfe070d43511fab321784e6c4118398">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\log4j-core-2.5_c2b6c63a2b10280a688305f9a9fd9479455cfdec.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2f417d93e1f62fd4fb4a2c0f3a4a882dd0ca7843">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.0.0-alpha2_0e5289a577c1096b5f264db8b53011c5889b77ac.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.6.4\27d3a9f7bbdcf72d93c9b2da7017e39551bfa9fb\jackson-core-2.6.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="27d3a9f7bbdcf72d93c9b2da7017e39551bfa9fb">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\jackson-core-2.6.4_a8eda0edeb43b31166de21f830a26f6507bd240e.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="df7f6513d6e2aaa302bbac654807c6129b517090">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0-alpha2_aac54dd7161f0f56585809db82b2a66a30906840.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty\6.1.26\2f546e289fddd5b1fab1d4199fbb6e9ef43ee4b0\jetty-6.1.26.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="2f546e289fddd5b1fab1d4199fbb6e9ef43ee4b0">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\jetty-6.1.26_3da64fca7f7a6985a6bc4798db36a0c8ee24e761.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.5\e7fd981408caba8a0c0fb276413562468d260160\log4j-api-2.5.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e7fd981408caba8a0c0fb276413562468d260160">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\log4j-api-2.5_35453fcbdb8e8b41aac24b9106d7d260cede9a29.jar" />
+    </item>
+    <item
+        jar="C:\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0-alpha2\support-annotations-24.0.0-alpha2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="8071e1e6cd07e9253720313d6c14286a7ee424e0">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0-alpha2_63d5e47eafa12e9b3e8b06caa7d13cc67bc4cdc7.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="32ab8bede8cd600f25a5bb3fe15068c81c8910dc">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0-alpha2_10219a192be5f3bf7928bfb8c616566f99ad0903.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\1.3.9\40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf\jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\jsr305-1.3.9_1c6df75d2876c7ea0b404d03d8bb3c5fcfcd66ef.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-youtube\v3-rev157-1.21.0\96244a92a752ec8d831f868bdff01f0ef87edb71\google-api-services-youtube-v3-rev157-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="96244a92a752ec8d831f868bdff01f0ef87edb71">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-api-services-youtube-v3-rev157-1.21.0_ef5b6cb50ab3299f78cc9518f0bb8f4527d3af65.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.21.0\16a6b3c680f3bf7b81bb42790ff5c1b72c5bbedc\google-api-client-1.21.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="16a6b3c680f3bf7b81bb42790ff5c1b72c5bbedc">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\google-api-client-1.21.0_c3536c672fc31cdbd431e16869fa707a5eaac45d.jar" />
+    </item>
+    <item
+        jar="E:\workspace\git\youtube-android-ui\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0-alpha2\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="661a632c3b434991d6364690cbe0f786371101cc">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.0.0-alpha2_c85c6fa5d9d763975bcf4853fb0ef6fcdbb1a01c.jar" />
+    </item>
+    <item
+        jar="C:\Users\dave\.gradle\caches\modules-2\files-2.1\joda-time\joda-time\2.9.1\c261495d1e01df849cdb3cbc941564018f0d3539\joda-time-2.9.1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="c261495d1e01df849cdb3cbc941564018f0d3539">
+        <dex dex="E:\workspace\git\youtube-android-ui\app\build\intermediates\pre-dexed\debug\joda-time-2.9.1_bd14434fa582d5cacf3af4c5e69f4ecb43000033.jar" />
+    </item>
+
+</items>
