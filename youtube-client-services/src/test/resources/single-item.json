@@ -1,0 +1,36 @@
+{
+ "kind": "youtube#subscriptionListResponse",
+ "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/b-FmNijjMZiTytMVm2kf0dzSPhA\"",
+ "nextPageToken": "CAUQAA",
+ "pageInfo": {
+  "totalResults": 127,
+  "resultsPerPage": 5
+ },
+ "items": [
+  {
+
+
+   "kind": "youtube#subscription",
+   "etag": "\"kuL0kDMAqRo3pU7O0pwlO-Lfzp4/x4nszKYTuOHU6R26gpCuMfknqhU\"",
+   "id": "0TT2uNx6myfCkbItHpOYzWiUIeEbHou-C4JmX684_SA",
+   "snippet": {
+    "publishedAt": "2015-11-29T02:14:48.000Z",
+    "title": "minagroupstage",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCLNU4Mw1ussuxMF_HvEfr1w"
+    },
+    "channelId": "UCRiHowjhqdhrHm2MBbdkTIw",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-e4829iFR9Ko/AAAAAAAAAAI/AAAAAAAAAAA/619ol2EU-Rc/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-e4829iFR9Ko/AAAAAAAAAAI/AAAAAAAAAAA/619ol2EU-Rc/s240-c-k-no/photo.jpg"
+     }
+    }
+   }
+  }
+ ]
+}
