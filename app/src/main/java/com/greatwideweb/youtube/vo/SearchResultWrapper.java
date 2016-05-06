@@ -1,6 +1,7 @@
 package com.greatwideweb.youtube.vo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.google.api.services.youtube.model.SearchResult;
@@ -12,27 +13,37 @@ public class SearchResultWrapper implements Serializable{
 
 	@Override
 	public String toString() {
-		return "SearchResultWrapper [hasSnippet=" + hasSnippet + ", channelId=" + channelId
+		return "SearchResultWrapper [channelId=" + channelId
 				+ ", channelTitle=" + channelTitle + ", title=" + title + ", publishedAt=" + publishedAt
 				+ ", description=" + description + ", smallImage=" + smallImage + ", mediumImage=" + mediumImage
 				+ ", largeImage=" + largeImage + ", maxRes=" + maxRes + "]";
 	}
 	private final String id;
-	private boolean hasSnippet;
 	private final String channelId;
 	private final String channelTitle;
 	private final String title;
 	private final Date publishedAt;
+	private final String formattedPublishedAt;
 	private final String description;
 	private RemoteImage smallImage;
 	private RemoteImage mediumImage;
 	private RemoteImage largeImage;
 	private RemoteImage maxRes;
 	private final String kind;
-	
-	
-	
-	
+
+
+	// for mock purposes
+	public SearchResultWrapper(String channelTitle, String title, String dateString, String descr) {
+		this.id = null;
+		this.channelId = null;
+		this.channelTitle = channelTitle;
+		this.title = title;
+		this.formattedPublishedAt  = dateString;
+		this.description = descr;
+		this.publishedAt = new Date();
+		this.kind =null;
+
+	}
 	
 	public SearchResultWrapper(SearchResult result) {
 		if(hasSnippet(result)) {
@@ -45,10 +56,15 @@ public class SearchResultWrapper implements Serializable{
 			this.channelId = result.getSnippet().getChannelId();
 			this.title = result.getSnippet().getTitle();
 			this.description = result.getSnippet().getDescription();
+
+
 			if(result.getSnippet().getPublishedAt() != null) {
 				this.publishedAt = new Date(result.getSnippet().getPublishedAt().getValue());
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyyy-mm-dd");
+				this.formattedPublishedAt = sdf.format(this.publishedAt);
 			} else {
 				this.publishedAt= null;
+				this.formattedPublishedAt = null;
 			}
 			
 			if(hasThumbnails(result)) {
@@ -74,6 +90,7 @@ public class SearchResultWrapper implements Serializable{
 			this.mediumImage = null;
 			this.largeImage = null;
 			this.maxRes = null;
+			this.formattedPublishedAt = null;
 		}
 	}
 	
@@ -98,10 +115,6 @@ public class SearchResultWrapper implements Serializable{
 
 	public String prettyText() {
 		return " published: " + this.publishedAt + "ChannelId: " + this.channelId + " Channel: " + this.channelTitle + " id:" + this.id + " kind: " + this.kind + " Show: " + this.title +  " description: " + this.description;
-	}
-
-	public boolean isHasSnippet() {
-		return hasSnippet;
 	}
 
 	public String getTitle() {
@@ -134,4 +147,5 @@ public class SearchResultWrapper implements Serializable{
 	
 	public String getId() { return this.id; }
 
+	public String getFormattedPublishedAt() { return this.formattedPublishedAt; }
 }

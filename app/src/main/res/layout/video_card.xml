@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="320dp"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/custom_background"
     >
@@ -9,8 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@android:drawable/sym_def_app_icon"
-        android:maxHeight="180px" android:maxWidth="320px"
-        android:minHeight="180px" android:minWidth="320px"
+        android:maxHeight="180px" android:maxWidth="320dp"
+        android:minHeight="180px" android:minWidth="320dp"
         android:layout_gravity="center"
         />
     <TextView
@@ -18,18 +18,44 @@
         android:layout_height="wrap_content"
         android:text="@string/VideoCardTitle"
         style="@style/VideoCardChannel"
+        android:id="@+id/videoCardTitle"
+        android:maxLines="1"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/VideoCardDescription"
         style="@style/VideoCardDescription"
-        android:maxLines="4"
+        android:id="@+id/videoCardDescription"
+        android:maxLines="3"
         />
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/VideoCardDate"
-        android:text="Date"
-        />
+        android:orientation="horizontal"
+       android:dividerPadding="25dp"
+        android:paddingRight="50dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/VideoCardDate"
+            android:id="@+id/videoCardDate"
+            android:text="10/23/2014"
+            android:layout_marginRight="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/VideoCardChannel"
+            android:id="@+id/videoCardChannelTitle"
+            android:text="video card channel"
+            />
+
+
+    </LinearLayout>
+
+
 </LinearLayout>

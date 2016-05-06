@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import com.greatwideweb.youtube.service.YoutubeServiceDelegate;
+import com.greatwideweb.youtube.vo.SearchParameters;
 import com.greatwideweb.youtube.vo.YoutubeSubscription;
 import com.google.api.services.youtube.model.SearchResult;
 
@@ -25,6 +26,8 @@ public class BuildVideos {
 	@Test
 	public void runTest()  {
 		String startTimeStamp = getTimeStamp();
+		String subscriptionTime = null;
+		String subAndFirst10=null;
 		ExecutorService pool = Executors.newFixedThreadPool(10);
 		YoutubeServiceDelegate serviceDelegate=null;
 		try {
@@ -32,18 +35,19 @@ public class BuildVideos {
 			serviceDelegate = new YoutubeServiceDelegate(pool);
 			List<YoutubeSubscription> subscriptions = serviceDelegate.fetchSubscriptions();
 			System.out.println("Subscriptions are back");
-			/*
+			subscriptionTime = getTimeStamp();
 			int count =0;
 			for(YoutubeSubscription subscription : subscriptions) {
-				count++;
 				SearchParameters searchParameters = new SearchParameters();
 				searchParameters.setChannelId(subscription.getChannelId());
 				searchParameters.setType("video");
 				subscription.setVideos(serviceDelegate.fetchVideos(searchParameters));
-				if(count > 3)
-					break;
+				count++;
+				if(count == 10) {
+					subAndFirst10 = getTimeStamp();
+				}
 			}
-			*/
+
 			
 			//serviceDelegate.buidAllVideos();
 		
@@ -54,9 +58,11 @@ public class BuildVideos {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
-		
-		System.out.println( "EndTime: " + getTimeStamp() + "Starttime: " + startTimeStamp);
+
+		System.out.println("Start: " + startTimeStamp);
+		System.out.println("Subscription: " + subscriptionTime);
+		System.out.println("Subscriptions + first 10: " + subAndFirst10);
+		System.out.println( "EndTime: " + getTimeStamp());
 		pool.shutdown();
 		
 		/*
