@@ -33,5 +33,20 @@ dependencies {
     compile 'com.google.oauth-client:google-oauth-client:1.21.0'
     compile 'com.google.oauth-client:google-oauth-client-jetty:1.21.0'
     compile 'joda-time:joda-time:2.9.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //Core
+    compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
+
+    //Optional for built-in cards
+    compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.1.0'
+
+    //Optional for RecyclerView
+    compile 'com.github.gabrielemariotti.cards:cardslib-recyclerview:2.1.0'
+
+    //Optional for staggered grid view
+    compile 'com.github.gabrielemariotti.cards:cardslib-extra-staggeredgrid:2.1.0'
+
+    //Optional for drag and drop
+    compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.1.0'
     testCompile 'commons-io:commons-io:2.4'
 }

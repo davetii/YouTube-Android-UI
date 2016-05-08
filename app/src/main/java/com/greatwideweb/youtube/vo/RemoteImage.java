@@ -17,4 +17,7 @@ public class RemoteImage {
 		this.url = url;
 	}
 
+	public String getURL() {
+		return this.url;
+	}
 }

@@ -32,19 +32,6 @@ public class SearchResultWrapper implements Serializable{
 	private final String kind;
 
 
-	// for mock purposes
-	public SearchResultWrapper(String channelTitle, String title, String dateString, String descr) {
-		this.id = null;
-		this.channelId = null;
-		this.channelTitle = channelTitle;
-		this.title = title;
-		this.formattedPublishedAt  = dateString;
-		this.description = descr;
-		this.publishedAt = new Date();
-		this.kind =null;
-
-	}
-	
 	public SearchResultWrapper(SearchResult result) {
 		if(hasSnippet(result)) {
 			this.kind = result.getKind();
@@ -66,12 +53,11 @@ public class SearchResultWrapper implements Serializable{
 				this.publishedAt= null;
 				this.formattedPublishedAt = null;
 			}
-			
 			if(hasThumbnails(result)) {
-				maybePopulateImage(result.getSnippet().getThumbnails().getStandard(), this.smallImage);
-				maybePopulateImage(result.getSnippet().getThumbnails().getMedium(), this.mediumImage);
-				maybePopulateImage(result.getSnippet().getThumbnails().getHigh(), this.largeImage);
-				maybePopulateImage(result.getSnippet().getThumbnails().getMaxres(), this.maxRes);
+				this.smallImage = buildRemoteImage(result.getSnippet().getThumbnails().getStandard());
+				this.mediumImage = buildRemoteImage(result.getSnippet().getThumbnails().getMedium());
+				this.largeImage = buildRemoteImage(result.getSnippet().getThumbnails().getHigh());
+				this.maxRes = buildRemoteImage(result.getSnippet().getThumbnails().getMaxres());
 			} else {
 				this.smallImage= null;
 				this.mediumImage= null;
@@ -94,11 +80,11 @@ public class SearchResultWrapper implements Serializable{
 		}
 	}
 	
-	private void maybePopulateImage(Thumbnail thumbnail, RemoteImage remoteImage) {
+	private RemoteImage buildRemoteImage(Thumbnail thumbnail) {
 		if(thumbnail == null) {
-			remoteImage = null;
+			return null;
 		} else {
-			remoteImage = new RemoteImage(thumbnail.getHeight().toString(), thumbnail.getWidth().toString(), thumbnail.getUrl());
+			return new RemoteImage(thumbnail.getHeight().toString(), thumbnail.getWidth().toString(), thumbnail.getUrl());
 		}
 	}
 
@@ -147,5 +133,9 @@ public class SearchResultWrapper implements Serializable{
 	
 	public String getId() { return this.id; }
 
-	public String getFormattedPublishedAt() { return this.formattedPublishedAt; }
+	public String getFormattedPublishedAt() { return this.formattedPublishedAt;}
+
+	public String getDetails() {
+		return this.formattedPublishedAt + "  .  " + this.channelTitle;
+	}
 }

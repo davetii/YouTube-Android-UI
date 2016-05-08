@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="VideoCardTitle">I am a video Card Channele</string>
-    <string name="VideoCardDescription">
+    <string name="VideoTitle">I am a video Card Channele</string>
+    <string name="VideoDescription">
         Economics 113, 001 - Spring 2015 American Economic History - Martha Olney Creative Commons 3.0: Attribution-NonCommercial-NoDerivs.
     </string>
 

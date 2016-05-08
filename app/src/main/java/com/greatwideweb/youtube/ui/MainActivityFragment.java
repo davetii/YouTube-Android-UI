@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.greatwideweb.mock.UITestDataProvider;
 import com.greatwideweb.youtube.vo.SearchResultWrapper;
 
 import java.util.ArrayList;
@@ -20,25 +21,14 @@ import java.util.List;
 public class MainActivityFragment extends Fragment {
 
     List<SearchResultWrapper> mockVideos  = new ArrayList<SearchResultWrapper>();
+    UITestDataProvider testDataProvider  = new UITestDataProvider();
     public MainActivityFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-        mockVideos.add(new SearchResultWrapper("Days of Our Lives", "Lukes return", "11/7/1984", "A length description saying something"));
-        mockVideos.add(new SearchResultWrapper("General Hospital", "Something is amiss at the drinking fountain", "11/8/1984", "When Rick and Monnica meet at the drinking fountain sparks fly, Martina has a sex chnage operation"));
-
+        mockVideos = testDataProvider.getMockedSearchResults();
     }
 
     @Override

@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -46,15 +48,18 @@ public class VideoGridAdaptor extends BaseAdapter {
         if(card == null) {
             LayoutInflater inflater = LayoutInflater.from(this.ctx);
             card = inflater.inflate(R.layout.video_card, viewGroup, false);
-            card.setLayoutParams( new GridView.LayoutParams(GridView.AUTO_FIT, 500));
-            TextView VideoCardTitle = (TextView) card.findViewById(R.id.videoCardTitle);
-            VideoCardTitle.setText(items.get(i).getTitle());
-            TextView videoCardDate = (TextView) card.findViewById(R.id.videoCardDate);
-            videoCardDate.setText(items.get(i).getFormattedPublishedAt());
-            TextView videoCardDescription = (TextView) card.findViewById(R.id.videoCardDescription);
-            videoCardDescription.setText(items.get(i).getDescription());
-            TextView videoCardChannel = (TextView) card.findViewById(R.id.videoCardChannelTitle);
-            videoCardChannel.setText(items.get(i).getChannelTitle());
+            //card.setLayoutParams( new GridView.LayoutParams(GridView.AUTO_FIT, 500));
+            TextView videoTitle = (TextView) card.findViewById(R.id.videoTitle);
+            videoTitle.setText(items.get(i).getTitle());
+
+            TextView videoDescription = (TextView) card.findViewById(R.id.videoDescription);
+            videoDescription.setText(items.get(i).getDescription());
+
+            TextView videoDetails = (TextView) card.findViewById(R.id.videoDetails);
+            videoDetails.setText(items.get(i).getDetails());
+            String videoThumbnailURL = items.get(i).getLargeImage().getURL();
+            ImageView iv = (ImageView) card.findViewById(R.id.videoThumbnail);
+            Picasso.with(this.ctx).load(videoThumbnailURL).into(iv);
         }
         return card;
     }
