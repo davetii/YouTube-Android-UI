@@ -8,13 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.greatwideweb.youtube.mock.TestDataProvider;
-import com.greatwideweb.youtube.tasks.HomeItemsBuilder;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 
 public class HomeItemsBuilderTest {
 	
-	List<SearchResultWrapper> videos;
-	List<SearchResultWrapper> homevideos;
+	List<VideoVO> videos;
+	List<VideoVO> homevideos;
 	@Before
 	public void setup() {
 		videos = new TestDataProvider().getAllVideosMock();

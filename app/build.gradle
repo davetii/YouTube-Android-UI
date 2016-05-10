@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 'android-N'
+    compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "greatwideweb.com.youtubeui"
         minSdkVersion 22
-        targetSdkVersion 'N'
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -22,8 +22,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.+'
-    compile 'com.android.support:design:24.+'
+    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:design:23.+'
     compile 'com.google.apis:google-api-services-youtube:v3-rev157-1.21.0'
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
@@ -48,5 +48,8 @@ dependencies {
 
     //Optional for drag and drop
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.1.0'
+
+    // Sugar ORM
+    compile 'com.github.satyan:sugar:1.4'
     testCompile 'commons-io:commons-io:2.4'
 }

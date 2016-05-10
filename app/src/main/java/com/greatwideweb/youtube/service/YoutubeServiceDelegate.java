@@ -15,17 +15,17 @@ import com.google.api.services.youtube.model.SearchResult;
 
 import com.greatwideweb.youtube.SubscriptionServiceExecutor;
 import com.greatwideweb.youtube.vo.SearchParameters;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
+import com.greatwideweb.youtube.vo.VideoVO;
 import com.greatwideweb.youtube.vo.SearchResultWrapperComparator;
-import com.greatwideweb.youtube.vo.VideoListComparator;
 import com.greatwideweb.youtube.vo.YoutubeSubscription;
 
 public class YoutubeServiceDelegate {
 	
 	private final YouTube youtubeService;
 	private final ExecutorService pool;
-	private List<YoutubeSubscription> subscriptions;
-	private List<SearchResultWrapper> allVideos = new ArrayList<SearchResultWrapper>();
+	private List<SubscriptionVO> subscriptions;
+	private List<VideoVO> allVideos = new ArrayList<VideoVO>();
 	
 	public YoutubeServiceDelegate(ExecutorService pool) throws InterruptedException, ExecutionException {
 		this.pool = pool;
@@ -34,26 +34,26 @@ public class YoutubeServiceDelegate {
 		this.youtubeService = youtubeServiceFuture.get();
 	}
 
-	public List<YoutubeSubscription> fetchSubscriptions() {
-		Callable<List<YoutubeSubscription>> subscriptionServiceExecutor = new SubscriptionServiceExecutor(youtubeService);
-		Future<List<YoutubeSubscription>> subscriptionFuture = this.pool.submit(subscriptionServiceExecutor);
+	public List<SubscriptionVO> fetchSubscriptions() {
+		Callable<List<SubscriptionVO>> subscriptionServiceExecutor = new SubscriptionServiceExecutor(youtubeService);
+		Future<List<SubscriptionVO>> subscriptionFuture = this.pool.submit(subscriptionServiceExecutor);
 		try { 
 			return subscriptionFuture.get();
 		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return new ArrayList<YoutubeSubscription>(); 
+			return new ArrayList<SubscriptionVO>();
 		}
 	}
 
-	public List<SearchResultWrapper> fetchVideos(SearchParameters searchParameters) {
-		List<SearchResultWrapper> results = new ArrayList<SearchResultWrapper>(); 
+	public List<VideoVO> fetchVideos(SearchParameters searchParameters) {
+		List<VideoVO> results = new ArrayList<VideoVO>();
 		Callable<List<SearchResult>> callable = new YoutubeSearchExecutor(youtubeService, searchParameters);
 		Future<List<SearchResult>> future = pool.submit(callable);
 		try {
 			List<SearchResult> resultsFromLookup =future.get();
 			for(SearchResult s : resultsFromLookup) {
-				results.add(new SearchResultWrapper(s));
+				results.add(new VideoVO(s));
 			}
 			
 		} catch (InterruptedException | ExecutionException e) {
@@ -64,28 +64,30 @@ public class YoutubeServiceDelegate {
 
 	public void buidAllVideos() {
 		subscriptions = this.fetchSubscriptions();
-		for(YoutubeSubscription o : subscriptions) { 
+		for(SubscriptionVO o : subscriptions) {
 			
 			SearchParameters searchParameters = new SearchParameters();
 			searchParameters.setChannelId(o.getChannelId());
 			searchParameters.setType("video");
-			o.setVideos(this.fetchVideos(searchParameters));
+			//o.setVideos(this.fetchVideos(searchParameters));
 		}
 		
 		// handle Dups
-		Set <SearchResultWrapper> allVideosSet = new HashSet<SearchResultWrapper>();
-		for(YoutubeSubscription o : subscriptions) {
-			for(SearchResultWrapper video : o.getVideos()) {
+		/*
+		Set <VideoVO> allVideosSet = new HashSet<VideoVO>();
+		for(SubscriptionVO o : subscriptions) {
+			for(VideoVO video : o.getVideos()) {
 				allVideosSet.add(video);
 			}
 		}
+		*/
 		
-		allVideos.clear();
-		allVideos.addAll(allVideosSet);
-		Collections.sort(allVideos, new SearchResultWrapperComparator());
+		//allVideos.clear();
+		//allVideos.addAll(allVideosSet);
+		//Collections.sort(allVideos, new SearchResultWrapperComparator());
 		
 	}
 
-	public List<SearchResultWrapper> getAllVideos() { return this.allVideos; }
+	public List<VideoVO> getAllVideos() { return this.allVideos; }
 
 }

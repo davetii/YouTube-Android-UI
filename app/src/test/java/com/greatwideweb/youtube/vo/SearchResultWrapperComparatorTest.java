@@ -26,11 +26,11 @@ public class SearchResultWrapperComparatorTest {
 		Date d1 = new GregorianCalendar(2016,0,31).getTime();
 		Date d2 = new GregorianCalendar(2015,0,31).getTime();
 		Date d3 = new GregorianCalendar(2014,0,31).getTime();
-		SearchResultWrapper video1 = new SearchResultWrapper(buildSearchResult("1",d1 ));
-		SearchResultWrapper video2 = new SearchResultWrapper(buildSearchResult("2", d2 ));
-		SearchResultWrapper video3 = new SearchResultWrapper(buildSearchResult("3" , d3));
+		VideoVO video1 = new VideoVO(buildSearchResult("1",d1 ));
+		VideoVO video2 = new VideoVO(buildSearchResult("2", d2 ));
+		VideoVO video3 = new VideoVO(buildSearchResult("3" , d3));
 		
-		List<SearchResultWrapper> videos = new ArrayList<SearchResultWrapper>();
+		List<VideoVO> videos = new ArrayList<VideoVO>();
 		videos.add(video3);
 		videos.add(video1);
 		videos.add(video2);
@@ -41,11 +41,11 @@ public class SearchResultWrapperComparatorTest {
 	@Test
 	public void ensureSortPushesNotNullToTop() {
 		Date d1 = new GregorianCalendar(2016,0,31).getTime();
-		SearchResultWrapper video1 = new SearchResultWrapper(buildSearchResult("1",d1 ));
-		SearchResultWrapper video2 = new SearchResultWrapper(buildSearchResult("2" ));
-		SearchResultWrapper video3 = new SearchResultWrapper(buildSearchResult("3"));
+		VideoVO video1 = new VideoVO(buildSearchResult("1",d1 ));
+		VideoVO video2 = new VideoVO(buildSearchResult("2" ));
+		VideoVO video3 = new VideoVO(buildSearchResult("3"));
 		
-		List<SearchResultWrapper> videos = new ArrayList<SearchResultWrapper>();
+		List<VideoVO> videos = new ArrayList<VideoVO>();
 		videos.add(video3);
 		videos.add(video1);
 		videos.add(video2);

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 import com.greatwideweb.youtube.vo.SearchResultWrapperComparator;
 
 public class HomeItemsBuilder {
@@ -14,14 +14,14 @@ public class HomeItemsBuilder {
 	
 	public static final int MAX_CARDS_ON_HOME = 250;
 	private static final int MAX_CARDS_SHOWS_PER_CHANNEL = 4;
-	private List<SearchResultWrapper> items=null;
-	public List<SearchResultWrapper> getItems() { return this.items; }
+	private List<VideoVO> items=null;
+	public List<VideoVO> getItems() { return this.items; }
 	
-	public HomeItemsBuilder(List<SearchResultWrapper> videos) {
+	public HomeItemsBuilder(List<VideoVO> videos) {
 		System.out.println("Videos given to HomeItemsBuilder: " + videos.size());
-		this.items = new ArrayList<SearchResultWrapper>();
+		this.items = new ArrayList<VideoVO>();
 		Map<String, Integer> channelsMap= new HashMap<String, Integer>();
-		for(SearchResultWrapper result : videos) {
+		for(VideoVO result : videos) {
 			
 			if(this.items.size() >= MAX_CARDS_ON_HOME) { break; }
 			

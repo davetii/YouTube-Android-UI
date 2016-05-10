@@ -5,12 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,8 +18,8 @@ import java.util.List;
  */
 public class VideoGridAdaptor extends BaseAdapter {
     private Context ctx;
-    private List<SearchResultWrapper> items;
-    public VideoGridAdaptor(Context context, List<SearchResultWrapper> items) {
+    private List<VideoVO> items;
+    public VideoGridAdaptor(Context context, List<VideoVO> items) {
         this.ctx = context;
         this.items = items;
     }
@@ -32,7 +30,7 @@ public class VideoGridAdaptor extends BaseAdapter {
     }
 
     @Override
-    public SearchResultWrapper getItem(int i) {
+    public VideoVO getItem(int i) {
         return items.get(i);
     }
 

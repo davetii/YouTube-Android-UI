@@ -11,13 +11,14 @@ import com.google.api.services.youtube.YouTube;
 import com.google.api.services.youtube.model.Subscription;
 import com.google.api.services.youtube.model.SubscriptionListResponse;
 import com.greatwideweb.youtube.YoutubeConstants;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
 import com.greatwideweb.youtube.vo.YoutubeSubscription;
 
 public class SubscriptionService {
 
 	List<String> channelIds = new ArrayList<String>();
 	private YouTube.Subscriptions.List subscriptionRequest;
-	private List<YoutubeSubscription> subscriptions = new ArrayList<YoutubeSubscription>();
+	private List<SubscriptionVO> subscriptions = new ArrayList<SubscriptionVO>();
 	private static Logger logger =  LogManager.getLogger(SubscriptionService.class);
 	public SubscriptionService(YouTube youtubeService) throws IOException {
 		
@@ -51,14 +52,14 @@ public class SubscriptionService {
 	   	if(items != null) {
         	nextToken = result.getNextPageToken();
         	for(Subscription s : items) {
-        		subscriptions.add(new YoutubeSubscription(s));
+        		subscriptions.add(new SubscriptionVO(s));
         		channelIds.add(s.getSnippet().getResourceId().getChannelId());
         	}
 	    }
 		return nextToken;
 	}
 	
-	public List<YoutubeSubscription> getSubscriptions() {
+	public List<SubscriptionVO> getSubscriptions() {
 		return this.subscriptions;
 	}
 

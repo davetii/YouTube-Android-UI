@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.greatwideweb.mock.UITestDataProvider;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class MainActivityFragment extends Fragment {
 
-    List<SearchResultWrapper> mockVideos  = new ArrayList<SearchResultWrapper>();
+    List<VideoVO> mockVideos  = new ArrayList<VideoVO>();
     UITestDataProvider testDataProvider  = new UITestDataProvider();
     public MainActivityFragment() {
     }

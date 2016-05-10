@@ -2,13 +2,11 @@ package com.greatwideweb.youtube.mock;
 
 import com.greatwideweb.youtube.OrderTypes;
 import com.greatwideweb.youtube.vo.SearchParameters;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -72,13 +70,13 @@ public class TestDataProvider {
 		return result;
 	}
 	
-	public List<SearchResultWrapper> getAllVideosMock() {
+	public List<VideoVO> getAllVideosMock() {
 		ObjectInputStream objectinputstream = null;
-		List<SearchResultWrapper> result = null;
+		List<VideoVO> result = null;
 		try {
 			InputStream input =this.getClass().getClassLoader().getResourceAsStream("serialized-all-videos.txt");
 		    ObjectInputStream objectinputstream1 = new ObjectInputStream(input);
-		    result = (List<SearchResultWrapper>) objectinputstream1.readObject();
+		    result = (List<VideoVO>) objectinputstream1.readObject();
 		    //recordList.add(readCase);
 		    //System.out.println(recordList.get(i));
 		} catch (Exception e) {

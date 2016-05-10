@@ -10,7 +10,8 @@ import java.util.concurrent.Executors;
 
 import com.greatwideweb.youtube.tasks.HomeItemsBuilder;
 import com.greatwideweb.youtube.vo.SearchParameters;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
+import com.greatwideweb.youtube.vo.VideoVO;
 import com.greatwideweb.youtube.vo.YoutubeSubscription;
 
 public class YoutubeAPIService {
@@ -19,26 +20,27 @@ public class YoutubeAPIService {
 	public void registerObserver(YoutubeAPIObserver o) { observers .add(o); }
 	public void unregisterObserver(YoutubeAPIObserver o) { observers.remove(o); }
 	
-	private void notifySubscriptionUpdate(List<YoutubeSubscription> subscriptions) {
+	private void notifySubscriptionUpdate(List<SubscriptionVO> subscriptions) {
 		for(YoutubeAPIObserver o : observers) { o.onSubscriptionsUpdate(subscriptions); }
 	}
 	
-	private void notifyVideoUpdate(List<SearchResultWrapper> videos) {
+	private void notifyVideoUpdate(List<VideoVO> videos) {
 		for(YoutubeAPIObserver o : observers) { o.onVideosUpdate(videos); }
 	}
 	
-	public List<YoutubeSubscription> fetchUserContent() throws InterruptedException, ExecutionException {
+	public List<SubscriptionVO> fetchUserContent() throws InterruptedException, ExecutionException {
 		ExecutorService pool = Executors.newFixedThreadPool(10);
 		YoutubeServiceDelegate serviceDelegate = new YoutubeServiceDelegate(pool);
-		List<YoutubeSubscription> subscriptions = serviceDelegate.fetchSubscriptions();
+		List<YoutubeSubscription> youtubeSubscriptions = new ArrayList<YoutubeSubscription>();
+		List<SubscriptionVO> subscriptions = serviceDelegate.fetchSubscriptions();
 		notifySubscriptionUpdate(subscriptions);
-		List<SearchResultWrapper> allVideos= new ArrayList<SearchResultWrapper>(); 
-		for(YoutubeSubscription subscription : subscriptions) {
+		List<VideoVO> allVideos= new ArrayList<VideoVO>();
+		for(SubscriptionVO subscription : subscriptions) {
 			SearchParameters searchParameters = new SearchParameters();
 			searchParameters.setChannelId(subscription.getChannelId());
 			searchParameters.setType("video");
-			List<SearchResultWrapper> searchResults = serviceDelegate.fetchVideos(searchParameters);
-			subscription.setVideos(searchResults);
+			List<VideoVO> searchResults = serviceDelegate.fetchVideos(searchParameters);
+			//subscription.setVideos(searchResults);
 			allVideos.addAll(searchResults);
 		}
 		pool.shutdown();

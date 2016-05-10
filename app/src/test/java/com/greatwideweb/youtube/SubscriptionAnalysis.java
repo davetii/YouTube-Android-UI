@@ -8,6 +8,7 @@ import java.util.List;
 import com.google.api.services.youtube.YouTube;
 import com.greatwideweb.youtube.service.SubscriptionService;
 import com.greatwideweb.youtube.service.YoutubeService;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
 import com.greatwideweb.youtube.vo.YoutubeSubscription;
 
 import org.apache.commons.io.FileUtils;
@@ -28,12 +29,12 @@ public class SubscriptionAnalysis {
 			
 			
 			SubscriptionService subscriptionService = new SubscriptionService(youtubeService);
-			List<YoutubeSubscription> subscriptions = subscriptionService.getSubscriptions();
+			List<SubscriptionVO> subscriptions = subscriptionService.getSubscriptions();
 			FileWriter fw = new FileWriter(f.getAbsoluteFile());
 			fw.write(PRETTY_SPACE);
 			fw.write("START");
 			fw.write(PRETTY_SPACE);
-			for(YoutubeSubscription o : subscriptions) { fw.write(o.toString()  + "\n"); }
+			for(SubscriptionVO o : subscriptions) { fw.write(o.toString()  + "\n"); }
 			fw.write(PRETTY_SPACE);
 			fw.write("");
 			fw.write("");

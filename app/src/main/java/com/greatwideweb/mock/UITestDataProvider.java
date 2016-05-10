@@ -5,7 +5,7 @@ import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.SearchResultSnippet;
 import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
-import com.greatwideweb.youtube.vo.SearchResultWrapper;
+import com.greatwideweb.youtube.vo.VideoVO;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by dave on 5/6/2016.
  */
 public class UITestDataProvider {
-    public List<SearchResultWrapper> getMockedSearchResults() {
+    public List<VideoVO> getMockedSearchResults() {
         List<SearchResult> data = new ArrayList<SearchResult>();
 
 
@@ -86,9 +86,9 @@ public class UITestDataProvider {
         searchResult.setSnippet(snippet);
         data.add(searchResult);
 
-        List<SearchResultWrapper> result = new ArrayList<SearchResultWrapper>();
+        List<VideoVO> result = new ArrayList<VideoVO>();
         for (SearchResult s : data) {
-            result.add(new SearchResultWrapper(s));
+            result.add(new VideoVO(s));
         }
 
         return result;
