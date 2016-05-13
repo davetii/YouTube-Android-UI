@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:numColumns="auto_fit"
     android:id="@+id/videoGridView"
-    android:layout_margin="20dp"
-    >
+    android:layout_margin="20dp" >
 
 </GridView>

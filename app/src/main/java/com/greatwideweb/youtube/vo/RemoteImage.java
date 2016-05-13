@@ -1,6 +1,8 @@
 package com.greatwideweb.youtube.vo;
 
-public class RemoteImage {
+import java.io.Serializable;
+
+public class RemoteImage implements Serializable {
 	
 	@Override
 	public String toString() {

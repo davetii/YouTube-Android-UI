@@ -1,7 +1,7 @@
 package com.greatwideweb.youtube.ui;
 
+import android.app.Fragment;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,15 +20,14 @@ import java.util.List;
  */
 public class MainActivityFragment extends Fragment {
 
-    List<VideoVO> mockVideos  = new ArrayList<VideoVO>();
-    UITestDataProvider testDataProvider  = new UITestDataProvider();
+    List<VideoVO> mockVideos  = null;
     public MainActivityFragment() {
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mockVideos = testDataProvider.getMockedSearchResults();
+        mockVideos = (ArrayList<VideoVO>)getArguments().getSerializable("videos");
     }
 
     @Override
