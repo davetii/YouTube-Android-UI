@@ -1,6 +1,8 @@
 package com.greatwideweb.youtube.mock;
 
 import com.greatwideweb.mock.UITestDataProvider;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
+import com.greatwideweb.youtube.vo.VideoVO;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,12 +20,24 @@ public class UITestDataProviderTest {
     }
 
     @Test
-    public void ensureUITestDataHasSize() {
-        Assert.assertEquals(true,testDataProvider.getMockedSearchResults().size() > 0 );
+    public void ensureSubscriptionHasChannel() {
+        SubscriptionVO s = testDataProvider.getMockedYoutubeItemsfromGoogleTalks().get(0).getSubscription();
+        Assert.assertNotNull(s.getChannelId());
+    }
+    @Test
+    public void ensureVideosHaveSize() {
+        Assert.assertEquals(true,testDataProvider.getMockedYoutubeItemsfromGoogleTalks().size() > 0 );
     }
 
     @Test
     public void ensureUITestDataHasLargeImage() {
-        Assert.assertNotNull(testDataProvider.getMockedSearchResults().get(0).getLargeImage().getURL());
+        VideoVO v = testDataProvider.getMockedYoutubeItemsfromGoogleTalks().get(0).getVideo();
+        Assert.assertNotNull(v.getLargeImage().getURL());
+    }
+
+    @Test
+    public void ensureUITestDataHasSubscriptionHighIMage() {
+        SubscriptionVO s = testDataProvider.getMockedYoutubeItemsfromGoogleTalks().get(0).getSubscription();
+        Assert.assertNotNull(s.getLargeImageURL());
     }
 }

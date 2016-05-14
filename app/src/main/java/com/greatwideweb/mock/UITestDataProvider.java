@@ -1,11 +1,16 @@
 package com.greatwideweb.mock;
 
 import com.google.api.client.util.DateTime;
+import com.google.api.services.youtube.model.ResourceId;
 import com.google.api.services.youtube.model.SearchResult;
 import com.google.api.services.youtube.model.SearchResultSnippet;
+import com.google.api.services.youtube.model.Subscription;
+import com.google.api.services.youtube.model.SubscriptionSnippet;
 import com.google.api.services.youtube.model.Thumbnail;
 import com.google.api.services.youtube.model.ThumbnailDetails;
+import com.greatwideweb.youtube.vo.SubscriptionVO;
 import com.greatwideweb.youtube.vo.VideoVO;
+import com.greatwideweb.youtube.vo.YoutubeItemVO;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,10 +21,46 @@ import java.util.List;
  * Created by dave on 5/6/2016.
  */
 public class UITestDataProvider {
-    public List<VideoVO> getMockedSearchResults() {
+
+    public SubscriptionVO buildGoogleTalksSubscription() {
+        SubscriptionSnippet  snippet = new SubscriptionSnippet();
+
+
+        snippet.setTitle("Talks at Google");
+        snippet.setChannelId("UCRiHowjhqdhrHm2MBbdkTIw");
+        ThumbnailDetails details = new ThumbnailDetails();
+        Thumbnail largeThumbnail  = new Thumbnail();
+        largeThumbnail.setUrl("https://yt3.ggpht.com/-ozFJ7rgchzE/AAAAAAAAAAI/AAAAAAAAAAA/enZ21DQkAok/s240-c-k-no-rj-c0xffffff/photo.jpg");
+        details.setHigh(largeThumbnail);
+
+        Thumbnail mediumThumbnail  = new Thumbnail();
+        mediumThumbnail.setUrl("https://yt3.ggpht.com/-ozFJ7rgchzE/AAAAAAAAAAI/AAAAAAAAAAA/enZ21DQkAok/s240-c-k-no-rj-c0xffffff/photo.jpg");
+        details.setMedium(mediumThumbnail);
+
+        Thumbnail defaultThumbnail  = new Thumbnail();
+        defaultThumbnail.setUrl("https://yt3.ggpht.com/-ozFJ7rgchzE/AAAAAAAAAAI/AAAAAAAAAAA/enZ21DQkAok/s88-c-k-no-rj-c0xffffff/photo.jpg");
+        details.setDefault(defaultThumbnail);
+        snippet.setThumbnails(details);
+
+        ResourceId resourceId  = new ResourceId();
+        resourceId.setChannelId("UCbmNph6atAoGfqLoCL_duAg");
+        snippet.setResourceId(resourceId);
+
+        Subscription subscription  = new Subscription();
+        subscription.setSnippet(snippet);
+        SubscriptionVO result = new SubscriptionVO(subscription);
+        return result;
+    }
+    public List<YoutubeItemVO> getMockedYoutubeItemsfromGoogleTalks() {
+        List<YoutubeItemVO>  youtubeItems = new ArrayList<YoutubeItemVO>();
+        SubscriptionVO subscriptionVO  = buildGoogleTalksSubscription();
+        List<VideoVO> videos = getMockedVideoResultsfromGoogleTalks();
+        for(VideoVO v : videos) { youtubeItems.add(new YoutubeItemVO(subscriptionVO, v)); }
+        return youtubeItems;
+    }
+    public List<VideoVO> getMockedVideoResultsfromGoogleTalks() {
+
         List<SearchResult> data = new ArrayList<SearchResult>();
-
-
         ThumbnailDetails thumbnails = new ThumbnailDetails();
         thumbnails.setDefault(buildImage("https://i.ytimg.com/vi/ORSDGg3hTao/default.jpg", 90, 120));
         thumbnails.setHigh(buildImage("https://i.ytimg.com/vi/ORSDGg3hTao/hqdefault.jpg", 360, 480));

@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.greatwideweb.youtube.vo.SubscriptionVO;
 import com.greatwideweb.youtube.vo.VideoVO;
+import com.greatwideweb.youtube.vo.YoutubeItemVO;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,9 +22,9 @@ import java.util.List;
  */
 public class VideoContainerAdaptor extends RecyclerView.Adapter<VideoContainerAdaptor.VideoViewHolder> {
 
-    private List<VideoVO> items;
+    private List<YoutubeItemVO> items;
 
-    public VideoContainerAdaptor(List<VideoVO> items) {
+    public VideoContainerAdaptor(List<YoutubeItemVO> items) {
         this.items = items;
     }
 
@@ -35,12 +37,17 @@ public class VideoContainerAdaptor extends RecyclerView.Adapter<VideoContainerAd
 
     @Override
     public void onBindViewHolder(VideoViewHolder holder, int i) {
-        Uri videoThumbnailURL = Uri.parse(this.items.get(i).getLargeImage().getURL());
-        Context ctx = holder.videoThumbnail.getContext();
-        Picasso.with(ctx).load(videoThumbnailURL).into(holder.videoThumbnail) ;
-        holder.videoTitle.setText(this.items.get(i).getFormattedTitle());
-        holder.videoDescription.setText(this.items.get(i).getDescription());
-        holder.videoDetails.setText(this.items.get(i).getDetails());
+        VideoVO video = this.items.get(i).getVideo();
+        SubscriptionVO subscription =this.items.get(i).getSubscription();
+        Uri videoThumbnailURL = Uri.parse(video.getLargeImage().getURL());
+        Uri channelThumbnailURL = Uri.parse(subscription.getLargeImageURL());
+        Context videoCtx = holder.videoThumbnail.getContext();
+        Context channelThumbCtx = holder.channelThumbnail.getContext();
+        Picasso.with(videoCtx).load(videoThumbnailURL).into(holder.videoThumbnail) ;
+        Picasso.with(channelThumbCtx).load(channelThumbnailURL).into(holder.channelThumbnail) ;
+        holder.videoTitle.setText(video.getFormattedTitle());
+        holder.videoDescription.setText(video.getFormattedDescription());
+        holder.videoDetails.setText(video.getDetails());
     }
 
     @Override

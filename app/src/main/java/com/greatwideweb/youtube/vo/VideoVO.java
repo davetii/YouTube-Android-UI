@@ -84,7 +84,6 @@ public class VideoVO implements Serializable{
 
 	public String getChannelId() { return this.channelId; }
 	public String getChannelTitle() { return this.channelTitle; }
-
 	public String prettyText() {
 		return " published: " + this.publishedAt + "ChannelId: " + this.channelId + " Channel: " + this.channelTitle + " id:" + this.id + " kind: " + this.kind + " Show: " + this.title +  " description: " + this.description;
 	}
@@ -92,40 +91,30 @@ public class VideoVO implements Serializable{
 	public String getTitle() {
 		return title;
 	}
-
 	public Date getPublishedAt() {
 		return publishedAt;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
+	public String getFormattedDescription() { return this.description.replace("\\", ""); }
 	public RemoteImage getDefaultImageImage() { return this.defaultImage; }
-
 	public RemoteImage getMediumImage() {
 		return mediumImage;
 	}
-
 	public RemoteImage getLargeImage() {
 		return largeImage;
 	}
-
 	public RemoteImage getMaxRes() {
 		return maxRes;
 	}
-	
 	public String getId() { return this.id; }
-
 	public String getFormattedPublishedAt() { return this.formattedPublishedAt;}
-
 	public String getDetails() {
 		return this.formattedPublishedAt + "  .  " + this.channelTitle;
 	}
+	public String getFormattedTitle() { return this.title.replace("\\", ""); }
 
-	public String getFormattedTitle() {
-		return this.title.replace("\\", "");
-	}
 
 
 }

@@ -15,6 +15,7 @@ import android.widget.GridView;
 import com.greatwideweb.mock.UITestDataProvider;
 import com.greatwideweb.youtube.ui.support.GridSpacingItemDecoration;
 import com.greatwideweb.youtube.vo.VideoVO;
+import com.greatwideweb.youtube.vo.YoutubeItemVO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
  */
 public class MainActivityFragment extends Fragment {
 
-    List<VideoVO> mockVideos  = null;
+    List<YoutubeItemVO> mockVideos  = null;
     RecyclerView videoContainer=null;
     public MainActivityFragment() {
     }
@@ -33,7 +34,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mockVideos = (ArrayList<VideoVO>)getArguments().getSerializable("videos");
+        mockVideos = (ArrayList<YoutubeItemVO>)getArguments().getSerializable("videos");
 
     }
 

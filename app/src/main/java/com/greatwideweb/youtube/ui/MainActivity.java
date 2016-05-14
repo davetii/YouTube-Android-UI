@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.greatwideweb.mock.UITestDataProvider;
 import com.greatwideweb.youtube.vo.VideoVO;
+import com.greatwideweb.youtube.vo.YoutubeItemVO;
 
 import org.mortbay.log.Log;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     boolean isOnHomeScreen=true;
     MainActivityFragment mainActivityFragment=null;
     SubscriptionMainFragment subscriptionMainFragment=null;
-    ArrayList<VideoVO> mockVideos  = new ArrayList<VideoVO>();
+    ArrayList<YoutubeItemVO> mockVideos  = new ArrayList<YoutubeItemVO>();
     UITestDataProvider testDataProvider  = new UITestDataProvider();
     Bundle dataBundle = new Bundle();
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mockVideos = (ArrayList)testDataProvider.getMockedSearchResults();
+        mockVideos = (ArrayList)testDataProvider.getMockedYoutubeItemsfromGoogleTalks();
         dataBundle.putSerializable("videos", mockVideos);
         handleOtherButtonClickEvent();
         handleMainView();
