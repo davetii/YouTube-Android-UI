@@ -19,7 +19,7 @@
 
 
     <style name="VideoTitle" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">#000000</item>
         <item name="android:typeface">normal</item>
         <item name="android:textStyle">bold</item>
@@ -32,7 +32,7 @@
     </style>
 
     <style name="VideoDetails" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:textColor">#777777</item>
         <item name="android:typeface">normal</item>
     </style>

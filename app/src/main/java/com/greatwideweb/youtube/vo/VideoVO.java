@@ -122,4 +122,10 @@ public class VideoVO implements Serializable{
 	public String getDetails() {
 		return this.formattedPublishedAt + "  .  " + this.channelTitle;
 	}
+
+	public String getFormattedTitle() {
+		return this.title.replace("\\", "");
+	}
+
+
 }

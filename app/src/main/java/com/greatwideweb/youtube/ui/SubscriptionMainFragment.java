@@ -51,7 +51,7 @@ public class SubscriptionMainFragment extends Fragment {
 
             //Create a CardHeader
             CardHeader header = new CardHeader(getContext());
-            header.setTitle(v.getTitle());
+            header.setTitle(v.getFormattedTitle());
             //Add Header to card
             card.addCardHeader(header);
 
