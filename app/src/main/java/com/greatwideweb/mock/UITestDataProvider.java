@@ -51,7 +51,7 @@ public class UITestDataProvider {
         SubscriptionVO result = new SubscriptionVO(subscription);
         return result;
     }
-    public List<YoutubeItemVO> getMockedYoutubeItemsfromGoogleTalks() {
+    public List<YoutubeItemVO> mockVideosgetMockedYoutubeItemsfromGoogleTalks() {
         List<YoutubeItemVO>  youtubeItems = new ArrayList<YoutubeItemVO>();
         SubscriptionVO subscriptionVO  = buildGoogleTalksSubscription();
         List<VideoVO> videos = getMockedVideoResultsfromGoogleTalks();

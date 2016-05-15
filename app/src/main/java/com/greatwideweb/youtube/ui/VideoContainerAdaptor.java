@@ -44,7 +44,9 @@ public class VideoContainerAdaptor extends RecyclerView.Adapter<VideoContainerAd
         Context videoCtx = holder.videoThumbnail.getContext();
         Context channelThumbCtx = holder.channelThumbnail.getContext();
         Picasso.with(videoCtx).load(videoThumbnailURL).into(holder.videoThumbnail) ;
-        Picasso.with(channelThumbCtx).load(channelThumbnailURL).into(holder.channelThumbnail) ;
+        holder.videoThumbnail.setContentDescription(video.getTitle());
+        Picasso.with(channelThumbCtx).load(channelThumbnailURL).into(holder.channelThumbnail);
+        holder.channelThumbnail.setContentDescription(subscription.getChannelTitle());
         holder.videoTitle.setText(video.getFormattedTitle());
         holder.videoDescription.setText(video.getFormattedDescription());
         holder.videoDetails.setText(video.getDetails());

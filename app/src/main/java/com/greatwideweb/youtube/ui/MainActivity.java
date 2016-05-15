@@ -2,32 +2,24 @@ package com.greatwideweb.youtube.ui;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-
+import android.widget.ImageButton;
 import com.greatwideweb.mock.UITestDataProvider;
-import com.greatwideweb.youtube.vo.VideoVO;
+import com.greatwideweb.youtube.ui.support.HomeTabsPagerAdapter;
 import com.greatwideweb.youtube.vo.YoutubeItemVO;
-
-import org.mortbay.log.Log;
-
 import java.util.ArrayList;
 
 
 
 public class MainActivity extends AppCompatActivity {
-
-    Button otherButton;
-    boolean isOnHomeScreen=true;
-    MainActivityFragment mainActivityFragment=null;
-    SubscriptionMainFragment subscriptionMainFragment=null;
-    ArrayList<YoutubeItemVO> mockVideos  = new ArrayList<YoutubeItemVO>();
-    UITestDataProvider testDataProvider  = new UITestDataProvider();
-    Bundle dataBundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,24 +27,44 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mockVideos = (ArrayList)testDataProvider.getMockedYoutubeItemsfromGoogleTalks();
-        dataBundle.putSerializable("videos", mockVideos);
-        handleOtherButtonClickEvent();
-        handleMainView();
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_home_white_36dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_subscriptions_black_36dp));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_search_black_36dp));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final HomeTabsPagerAdapter adapter = new HomeTabsPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+                switch(tab.getPosition()) {
+                    case 0: tab.setIcon(R.drawable.ic_home_white_36dp); break;
+                    case 1: tab.setIcon(R.drawable.ic_subscriptions_white_36dp); break;
+                    case 2: tab.setIcon(R.drawable.ic_search_white_36dp); break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                switch(tab.getPosition()) {
+                    case 0: tab.setIcon(R.drawable.ic_home_black_36dp); break;
+                    case 1: tab.setIcon(R.drawable.ic_subscriptions_black_36dp); break;
+                    case 2: tab.setIcon(R.drawable.ic_search_black_36dp); break;
+                }
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
-
-    private void handleMainView() {
-        if(mainActivityFragment == null) {
-            mainActivityFragment = new MainActivityFragment();
-            mainActivityFragment.setArguments(dataBundle);
-        }
-
-        FragmentManager fragMgr  = getFragmentManager();
-        fragMgr.beginTransaction()
-                .replace(R.id.content_frame, mainActivityFragment)
-                .commit();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,33 +72,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-    private void handleOtherButtonClickEvent() {
-        otherButton = (Button) findViewById(R.id.other_button);
-        otherButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isOnHomeScreen) {
-                    showSubscriptions();
-                } else {
-                    handleMainView();
-                }
-                isOnHomeScreen = !isOnHomeScreen;
-            }
-        });
-    }
-
-    private void showSubscriptions() {
-        if(subscriptionMainFragment == null) {
-            subscriptionMainFragment = new SubscriptionMainFragment();
-            subscriptionMainFragment.setArguments(dataBundle);
-        }
-        FragmentManager fragMgr  = getFragmentManager();
-        fragMgr.beginTransaction()
-                .replace(R.id.content_frame,subscriptionMainFragment)
-                .commit();
-    }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -97,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch(id) {
             case R.id.close_menu_item: {
-                Log.debug("close_menu_item clicked");
                 finish();
                 return true;
             }

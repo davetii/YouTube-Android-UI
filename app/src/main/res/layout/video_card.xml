@@ -47,19 +47,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/VideoTitle"
                 style="@style/VideoTitle"
                 android:id="@+id/videoTitle"
                 android:layout_toRightOf="@+id/channelThumbnail"
                 android:layout_below="@+id/videoThumbnail"
                 android:maxLines="2"
-                android:paddingTop="5dp"
+                android:paddingTop="15dp"
                 />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/card_base_cardwithlist_divider_color"
                 android:layout_below="@+id/channelThumbnail"
                 android:id="@+id/seperator"
                 />
@@ -67,12 +65,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/VideoDescription"
                 style="@style/VideoDescription"
                 android:id="@+id/videoDescription"
                 android:maxLines="3"
                 android:layout_below="@+id/seperator"
                 android:paddingLeft="5dp"
+
                 />
 
             <TextView
@@ -80,7 +78,6 @@
                 android:layout_height="wrap_content"
                 style="@style/VideoDetails"
                 android:id="@+id/videoDetails"
-                android:text="Details"
                 android:layout_marginRight="10dp"
                 android:layout_below="@+id/videoDescription"
                 android:paddingLeft="5dp"

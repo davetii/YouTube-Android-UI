@@ -1,6 +1,6 @@
 package com.greatwideweb.youtube.ui;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
@@ -34,8 +34,12 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mockVideos = (ArrayList<YoutubeItemVO>)getArguments().getSerializable("videos");
-
+        try
+        {
+            mockVideos = (ArrayList<YoutubeItemVO>)getArguments().getSerializable("videos");
+        }catch (Exception e){
+            mockVideos = new ArrayList<YoutubeItemVO>();
+        }
     }
 
     @Override
